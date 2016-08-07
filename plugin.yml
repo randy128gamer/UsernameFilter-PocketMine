@@ -1,0 +1,25 @@
+name: UsernameFilter
+main: usernamefilter\UsernameFilter
+version: 1.0.0
+api: [2.0.0, 2.1.0, 2.2.0, 2.3.0]
+author: xXSuperFrostyXx, randy128gamer
+description: A plugin which is used to filter the word that you've added to player's username.
+
+commands:
+    ufadd:
+        description: Adds the given word used to block the player's username.
+    ufremove:
+        description: Removes the given word used to block the player's username.
+    ufreload:
+        description: Reloads the configuration.
+        
+permissions:
+    usernamefilter.command.ufadd:
+        default: op
+        description: Allows the player to add the given word used to block the player's username.
+    usernamefilter.command.ufadd:
+        default: op
+        description: Allows the player to remove the given word used to block the player's username.
+    usernamefilter.command.ufreload:
+        default: op
+        description: Allows the player to reload the configuration.
