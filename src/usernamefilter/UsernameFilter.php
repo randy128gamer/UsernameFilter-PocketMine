@@ -35,9 +35,9 @@ class UsernameFilter extends PluginBase implements Listener {
     private function checkPlayerUsernames() {
         foreach ($this->getServer()->getOnlinePlayers() as $players) {
             foreach ($this->wordList->forEachWord() as $words) {
-                if (strpos(strtolower($players->getName()), strtolower($words)) >= 0
-                        || strpos(strtolower($players->getDisplayName()), strtolower($words))) {
-                    $players->kick("§bYou're not allowed to use that username in this serer.");
+                if (strpos(strtolower($players->getName()), strtolower($words)) >= 1
+                        || strpos(strtolower($players->getDisplayName()), strtolower($words)) >= 1) {
+                    $players->kick("§bYou're not allowed to use that username in this serer.", false);
                 }
             }
         }
@@ -93,8 +93,8 @@ class UsernameFilter extends PluginBase implements Listener {
     public function onPlayerJoin(PlayerJoinEvent $event) {
         $player = $event->getPlayer();
         foreach ($this->wordList->forEachWord() as $words) {
-            if (strpos(strtolower($player->getName()), strtolower($words)) >= 0
-                    || strpos(strtolower($player->getDisplayName()), strtolower($words)) >= 0) {
+            if (strpos(strtolower($player->getName()), strtolower($words)) >= 1
+                    || strpos(strtolower($player->getDisplayName()), strtolower($words)) >= 1) {
                 $event->setJoinMessage("");
                 $player->kick("§bYou're not allowed to use that username in this serer.", false);
                 break;
