@@ -12,4 +12,5 @@ What's new in UsernameFilter 1.0.0?
 
 What's new in UsernameFilter 1.0.1?
 
-- Bug fixes.
+- Bug fixes:
+  - It blocks the username of a player that not containing the word you've added.
