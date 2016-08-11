@@ -1,5 +1,7 @@
 <?php
+
 namespace usernamefilter;
+
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\event\Listener;
@@ -85,6 +87,7 @@ class UsernameFilter extends PluginBase implements Listener {
                 return true;
         }
     }
+    
     public function onPlayerJoin(PlayerJoinEvent $event) {
         $player = $event->getPlayer();
         foreach ($this->wordList->forEachWord() as $words) {
